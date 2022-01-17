@@ -3,9 +3,17 @@ app = Flask(__name__)
 
 @app.route('/todos', methods=['GET'])
 def hello_world():
-    return "<h1>Hello!</h1>"
+    # supongamos que tienes some_data (cierta información) en una variable json
+    some_data = { "name": "Bobby", "lastname": "Rixer" }
 
-    todos = [
+    # puedes convertir esa variable en un string json así
+    json_text = flask.jsonify(some_data)
+
+    # y luego puedes retornarla (return) en el response body así:
+    return flask.jsonify
+
+
+todos = [
     { "label": "My first task", "done": False },
     { "label": "My second task", "done": False }
 ]
